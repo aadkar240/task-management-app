@@ -16,7 +16,7 @@ function App() {
     // Get all tasks
     const fetchTasks = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/tasks");
+            const response = await fetch("https://task-management-backend-z2qc.onrender.com/api/tasks");
             const data = await response.json();
 
             setTasks(data);
@@ -41,7 +41,7 @@ function App() {
         try {
             if (editingTask) {
                 const response = await fetch(
-                    `http://localhost:5000/api/tasks/${editingTask._id}`,
+                    `https://task-management-backend-z2qc.onrender.com/api/tasks/${editingTask._id}`,
                     {
                         method: "PUT",
                         headers: {
@@ -68,7 +68,7 @@ function App() {
                 setEditingTask(null);
             } else {
                 const response = await fetch(
-                    "http://localhost:5000/api/tasks",
+                    "https://task-management-backend-z2qc.onrender.com/api/tasks",
                     {
                         method: "POST",
                         headers: {
@@ -99,7 +99,7 @@ function App() {
     // Delete task
     const deleteTask = async (id) => {
         try {
-            await fetch(`http://localhost:5000/api/tasks/${id}`, {
+            await fetch(`https://task-management-backend-z2qc.onrender.com/api/tasks/${id}`, {
                 method: "DELETE"
             });
 
@@ -122,7 +122,7 @@ function App() {
     const updateStatus = async (id, status) => {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/tasks/${id}`,
+                `https://task-management-backend-z2qc.onrender.com/api/tasks/${id}`,
                 {
                     method: "PUT",
                     headers: {
